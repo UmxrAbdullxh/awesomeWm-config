@@ -60,7 +60,7 @@ local function list_update(w, buttons, label, data, objects)
       -- All of this is added in a fixed widget
       l:fill_space(true)
       l:add(ibm)
-      -- l:add(tbm)
+      --l:add(tbm)
       bg_clickable:set_widget(l)
 
       -- And all of this gets a background
@@ -89,6 +89,7 @@ local function list_update(w, buttons, label, data, objects)
       end
     end
     bgb:set_bg(bg)
+    --bgb:set_bg('#000000')
     if type(bg_image) == 'function' then
       -- TODO: Why does this pass nil as an argument?
       bg_image = bg_image(tb, o, nil, objects, i)

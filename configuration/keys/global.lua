@@ -239,6 +239,21 @@ local globalKeys =
     end,
     {description = 'Select previous', group = 'layout'}
   ),
+  -- On-the-fly useless gaps change
+  awful.key(
+    { modkey, }, "o", 
+    function () 
+      awful.tag.incgap(1)    
+    end,
+    {description = "increase gap", group = "layout"}
+  ),
+  awful.key(
+    { modkey, "Shift"   }, "o", 
+    function () 
+      awful.tag.incgap(-1)    
+    end,
+    {description = "decrease gap", group = "layout"}
+  ),
   awful.key(
     {modkey, 'Control'},
     'n',
@@ -252,6 +267,18 @@ local globalKeys =
     end,
     {description = 'restore minimized', group = 'client'}
   ),
+  -- --Minimize client
+  -- awful.key(
+  --   { 'Control',           }, 
+  --   "n",
+  --   function (c)
+  --     --local c = awful.client.restore()
+  --     -- The client currently has the input focus, so it cannot be
+  --     -- minimized, since minimized clients can't have the focus.
+  --     c.minimized = true
+  --   end ,
+  --   {description = "minimize", group = "client"}
+  -- ),
   -- Dropdown application
   awful.key(
     {modkey},
@@ -415,7 +442,7 @@ local globalKeys =
   -- Emoji Picker
   awful.key(
     {modkey},
-    'a',
+    'i',
     function()
       awful.util.spawn_with_shell('ibus emoji')
     end,

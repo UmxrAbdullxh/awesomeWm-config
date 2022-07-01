@@ -4,11 +4,12 @@ return {
   --tags
   chrome = dir .. '/brave.svg',
   code = dir .. '/code-braces.svg',
-  social = dir .. '/forum.svg',
-  folder = dir .. '/folder.svg',
-  music = dir .. '/music.svg',
+  social = dir .. '/ship-wheel.svg',
+  folder = dir .. '/4chan.svg',
+  music = dir .. '/naruto.svg',
   game = dir .. '/google-controller.svg',
   lab = dir .. '/flask.svg',
+  naruto = dir .. '/naruto.svg',
   --others
   menu = dir .. '/menu.svg',
   close = dir .. '/close.svg',

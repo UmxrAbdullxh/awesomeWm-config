@@ -8,7 +8,7 @@ local rofi_command = 'env /usr/bin/rofi -dpi ' .. get_dpi() .. ' -width ' .. wit
 return {
   -- List of apps to start by default on some actions
   default = {
-    terminal = 'terminator',
+    terminal = 'urxvt',
     rofi = rofi_command,
     lock = 'i3lock-fancy',
     quake = 'terminator',
@@ -24,7 +24,7 @@ return {
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
-    'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
+    'picom --config ~/.config/awesome/configuration/picom.conf -b',
     'nm-applet --indicator', -- wifi
     'pnmixer', -- shows an audiocontrol applet in systray when installed.
     --'blueberry-tray', -- Bluetooth tray icon
@@ -32,8 +32,8 @@ return {
     '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
     'xfce4-power-manager', -- Power manager
      'flameshot',
-     'synology-drive -minimized',
-     'steam -silent',
+     --'synology-drive -minimized',
+     --'steam -silent',
     'feh --randomize --bg-fill ~/.wallpapers/*',
     '/usr/bin/variety',
     -- Add applications that need to be killed between reloads

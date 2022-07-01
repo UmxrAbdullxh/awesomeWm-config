@@ -15,9 +15,11 @@ local systray = wibox.widget.systray()
   systray:set_horizontal(true)
   systray:set_base_size(20)
   systray.forced_height = 20
+  beautiful.bg_systray = "#000000"
+
 
   -- Clock / Calendar 24h format
--- local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d.%m.%Y\n     %H:%M</span>')
+--local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d.%m.%Y\n     %H:%M</span>')
 -- Clock / Calendar 12AM/PM fornat
 local textclock = wibox.widget.textclock('<span font="Roboto Mono 12">%I:%M %p</span>')
 -- textclock.forced_height = 36
@@ -100,10 +102,13 @@ local TopPanel = function(s)
       screen = s,
       height = dpi(32),
       width = s.geometry.width,
+      --border_width = dpi(0.5),
+      --border_color = '#FFFFFF',
       x = s.geometry.x,
       y = s.geometry.y,
       stretch = false,
-      bg = beautiful.background.hue_800,
+      --bg = beautiful.background.hue_800,
+      bg = '#000000',
       fg = beautiful.fg_normal,
       struts = {
         top = dpi(32)
@@ -132,6 +137,8 @@ local TopPanel = function(s)
         wibox.container.margin(systray, dpi(3), dpi(3), dpi(6), dpi(3)),
         -- Layout box
         LayoutBox(s),
+	-- Battery
+	require('widget.battery'),
         -- Clock
         clock_widget,
       }
